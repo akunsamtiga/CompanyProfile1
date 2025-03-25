@@ -13,7 +13,7 @@ export default function Cover() {
 
   // Fungsi untuk scroll ke About Section dengan efek smooth
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById("about-section");
+    const aboutSection = document.getElementById("about");
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: "smooth" });
     }
