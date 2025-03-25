@@ -12,7 +12,7 @@ export default function Navbar() {
     if (typeof window === "undefined") return;
 
     let ticking = false;
-    const sections = ["home", "about", "services", "contact"];
+    const sections = navItems.map(item => item.id);
 
     const handleScroll = () => {
       if (!ticking) {
@@ -20,12 +20,18 @@ export default function Navbar() {
           const scrollY = window.scrollY;
           setIsNavbarFixed(scrollY > 80);
 
+          let newActiveSection = "home"; // Default
           for (const section of sections) {
             const el = document.getElementById(section);
-            if (el && scrollY >= el.offsetTop - 80) {
-              setActiveSection(section);
+            if (el && scrollY >= el.offsetTop - 100) {
+              newActiveSection = section;
             }
           }
+
+          if (newActiveSection !== activeSection) {
+            setActiveSection(newActiveSection);
+          }
+
           ticking = false;
         });
         ticking = true;
@@ -34,9 +40,9 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [activeSection]); // Hanya update jika activeSection berubah
 
-  // Efek scroll halus saat ikon navbar diklik
+  // Efek scroll halus saat klik ikon navbar
   useEffect(() => {
     const links = document.querySelectorAll("a[href^='#']");
     links.forEach(link => {
@@ -46,7 +52,7 @@ export default function Navbar() {
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 80,
+            top: targetElement.offsetTop - 0,
             behavior: "smooth",
           });
         }
@@ -77,9 +83,9 @@ export default function Navbar() {
 // Data menu navbar
 const navItems = [
   { id: "home", label: "Beranda", icon: <HomeIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
-  { id: "about-section", label: "Tentang", icon: <UserIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
-  { id: "coffee-menu", label: "Menu", icon: <FaCoffee className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
+  { id: "about", label: "Tentang", icon: <UserIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
   { id: "founder-section", label: "Kontak", icon: <PhoneIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
+  { id: "coffee-menu", label: "Coffee Menu", icon: <FaCoffee className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
 ];
 
 // Komponen NavItem dengan efek masuk yang lebih smooth

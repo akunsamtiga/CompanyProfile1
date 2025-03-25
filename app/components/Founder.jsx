@@ -24,7 +24,7 @@ export default function Founder() {
   return (
     <section
       id="founder-section"
-      className="relative w-full py-20 px-6 md:px-12 text-white bg-white max-w-screen overflow-hidden"
+      className="relative w-full pt-24 md:pt-26 lg:pt-28 px-6 md:px-12 text-white bg-white max-w-screen overflow-hidden"
     >
       {/* Container Card */}
       <div className="max-w-6xl mx-auto bg-gray-900 rounded-3xl shadow-[0px_4px_20px_rgba(255,165,0,0.6)] md:shadow-[0px_8px_30px_rgba(255,140,0,0.5)] p-6 md:p-12 flex flex-col md:flex-row items-center gap-10 border border-gray-700 relative z-10">
@@ -113,13 +113,12 @@ export default function Founder() {
             className="relative"
           >
             {/* Frame Gold */}
-            <div className="absolute -top-5 -left-5 w-full h-full border-2 border-white rounded-xl"></div>
+            <div className="absolute -top-3 -left-3 w-full h-full border-2 border-orange-200 rounded-xl"></div>
             <Image
-              src="/images/founder2.jpg"
+              src="/images/founder3.jpg"
               alt="Founder"
               width={200}
               height={200}
-              unoptimized={true}
               className="rounded-xl w-64 h-32 md:w-56 md:h-full lg:w-54 lg:h-full object-cover relative z-10"
             />
 
@@ -128,7 +127,7 @@ export default function Founder() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.5, duration: 0.7, ease: "easeOut" }}
-              className="absolute -bottom-8 -right-8 w-24 h-24 md:w-30 md:h-30 lg:w-34 lg:h-34 border-2 border-white rounded-full overflow-hidden shadow-lg z-20"
+              className="absolute -bottom-8 -right-8 w-24 h-24 md:w-30 md:h-30 lg:w-34 lg:h-34 border-2 border-orange-200 rounded-full overflow-hidden shadow-lg z-20"
             >
               <Image
                 src="/images/founder.jpg"

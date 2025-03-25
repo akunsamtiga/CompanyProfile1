@@ -47,8 +47,8 @@ const CoffeeMenu = () => {
     <section id="coffee-menu" className="py-12 md:py-20 bg-gray-200 relative">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-amber-900 mb-4 tracking-wide">
+        <div className="text-center my-10">
+          <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-amber-600 mb-4 tracking-wide">
             Best Seller
           </h2>
           <div className="w-20 h-1 bg-amber-600 mx-auto rounded-full" />

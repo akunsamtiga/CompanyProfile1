@@ -158,16 +158,6 @@ export default function Testimonials() {
           </Swiper>
         </motion.div>
 
-        {/* CTA Button */}
-        <motion.a
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-          transition={{ delay: 1, duration: 0.6 }}
-          href="#reviews"
-          className="mt-10 inline-block bg-gray-100 text-[#1e120d] font-semibold py-3 px-8 rounded-lg hover:bg-amber-200 transition duration-300 shadow-xl transform hover:scale-105"
-        >
-          Ulasan lainnya
-        </motion.a>
       </div>
     </section>
   );

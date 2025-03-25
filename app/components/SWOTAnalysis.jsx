@@ -48,9 +48,9 @@ export default function Analysis() {
   const COLORS = ["#4B5563", "#6B7280", "#9CA3AF", "#D1D5DB"];
 
   return (
-    <section id="analysis-section" className="w-full pt-18 pb-4 px-3 md:px-6 text-gray-100 bg-gray-100">
+    <section id="analysis-section" className="w-full pt-18 pb-4 px-3 md:px-6 text-gray-50 bg-gray-100">
       <motion.div
-        className="max-w-6xl mx-auto bg-gray-200 rounded-3xl shadow-lg px-3 pt-8 pb-3 md:px-6 md:pt-6 md:pb-6"
+        className="max-w-6xl mx-auto bg-gray-100 rounded-3xl shadow-lg px-3 pt-8 pb-3 md:px-6 md:pt-6 md:pb-6"
         initial={{ opacity: 0, y: 40 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, ease: "easeOut" }}
@@ -66,15 +66,15 @@ export default function Analysis() {
 
         {/* Statistik Utama */}
         <div className="grid md:grid-cols-3 gap-4 lg:gap-6 text-center mb-8">
-          <div className="bg-red-100 p-2 rounded-lg shadow-md">
+          <div className="bg-red-100 p-2 rounded-lg">
             <h3 className="text-base font-bold text-red-800">Penjualan Terbaik</h3>
             <p className="text-sm text-gray-700">Cappuccino: 5200 cup</p>
           </div>
-          <div className="bg-orange-100 p-2 rounded-lg shadow-md">
+          <div className="bg-orange-100 p-2 rounded-lg">
             <h3 className="text-base font-bold text-orange-800">Biji Kopi Favorit</h3>
             <p className="text-sm text-gray-700">Arabica: 65%</p>
           </div>
-          <div className="bg-green-100 p-2 rounded-lg shadow-md">
+          <div className="bg-green-100 p-2 rounded-lg">
             <h3 className="text-base font-bold text-green-800">Pendapatan Tertinggi</h3>
             <p className="text-sm text-gray-700">Juni: $9100</p>
           </div>

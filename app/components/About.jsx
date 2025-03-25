@@ -18,7 +18,7 @@ export default function About() {
       { threshold: 0.2 }
     );
 
-    const section = document.getElementById("about-section");
+    const section = document.getElementById("about");
     if (section) observer.observe(section);
 
     return () => {
@@ -28,7 +28,7 @@ export default function About() {
 
   return (
     <section
-      id="about-section"
+      id="about"
       className="relative py-20 px-6 md:px-12 bg-white text-gray-800 max-w-screen overflow-hidden"
     >
       {/* Elemen Bulatan Terminal di Pojok Kanan Atas */}
@@ -130,7 +130,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isVisible ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 1.3, duration: 0.5 }}
-            href="#services"
+            href="/contact"
             className="mt-6 inline-block bg-[#C5A880] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-[#B39272] transition duration-300"
           >
             Lebih Lanjut
