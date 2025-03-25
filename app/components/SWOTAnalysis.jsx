@@ -48,42 +48,42 @@ export default function Analysis() {
   const COLORS = ["#4B5563", "#6B7280", "#9CA3AF", "#D1D5DB"];
 
   return (
-    <section id="analysis-section" className="w-full py-20 px-6 md:px-12 text-gray-100 bg-gray-900">
+    <section id="analysis-section" className="w-full pt-18 pb-4 px-3 md:px-6 text-gray-100 bg-gray-100">
       <motion.div
-        className="max-w-6xl mx-auto bg-gray-800 rounded-3xl shadow-lg p-6 md:p-12"
+        className="max-w-6xl mx-auto bg-gray-200 rounded-3xl shadow-lg px-3 pt-8 pb-3 md:px-6 md:pt-6 md:pb-6"
         initial={{ opacity: 0, y: 40 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         {/* Header dan Deskripsi */}
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-100 text-center mb-4">
-          Coffee Shop <span className="text-gray-400">Analysis</span>
+        <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-4">
+          Survey <span className="text-gray-800 font-extrabold">Analysis</span>
         </h2>
-        <p className="text-center text-gray-400 max-w-3xl mx-auto mb-8">
+        <p className="text-xs md:text-sm lg:text-base text-center text-gray-800 max-w-3xl mx-auto mb-8">
           Analisis ini menampilkan tren penjualan kopi, preferensi pelanggan terhadap jenis biji kopi, dan pendapatan bulanan. 
           Data ini membantu memahami pola konsumsi serta strategi pemasaran yang lebih efektif.
         </p>
 
         {/* Statistik Utama */}
-        <div className="grid md:grid-cols-3 gap-6 text-center mb-12">
-          <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold text-gray-100">Penjualan Terbaik</h3>
-            <p className="text-lg text-gray-400">Cappuccino: 5200 cup</p>
+        <div className="grid md:grid-cols-3 gap-4 lg:gap-6 text-center mb-8">
+          <div className="bg-red-100 p-2 rounded-lg shadow-md">
+            <h3 className="text-base font-bold text-red-800">Penjualan Terbaik</h3>
+            <p className="text-sm text-gray-700">Cappuccino: 5200 cup</p>
           </div>
-          <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold text-gray-100">Biji Kopi Favorit</h3>
-            <p className="text-lg text-gray-400">Arabica: 65%</p>
+          <div className="bg-orange-100 p-2 rounded-lg shadow-md">
+            <h3 className="text-base font-bold text-orange-800">Biji Kopi Favorit</h3>
+            <p className="text-sm text-gray-700">Arabica: 65%</p>
           </div>
-          <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold text-gray-100">Pendapatan Tertinggi</h3>
-            <p className="text-lg text-gray-400">Juni: $9100</p>
+          <div className="bg-green-100 p-2 rounded-lg shadow-md">
+            <h3 className="text-base font-bold text-green-800">Pendapatan Tertinggi</h3>
+            <p className="text-sm text-gray-700">Juni: $9100</p>
           </div>
         </div>
 
         {/* Grid Layout for Charts */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-4 lg:gap-6">
           {/* Grafik Bar Chart */}
-          <motion.div className="bg-gray-700 p-6 rounded-xl shadow-md">
+          <motion.div className="bg-gray-700 p-4 rounded-xl shadow-md">
             <h3 className="text-xl font-semibold text-gray-100 text-center mb-4">Top Coffee Sales</h3>
             <ResponsiveContainer width="100%" height={250}>
               <BarChart data={coffeeSalesData}>
@@ -97,7 +97,7 @@ export default function Analysis() {
           </motion.div>
 
           {/* Grafik Pie Chart */}
-          <motion.div className="bg-gray-700 p-6 rounded-xl shadow-md">
+          <motion.div className="bg-gray-700 p-4 rounded-xl shadow-md">
             <h3 className="text-xl font-semibold text-gray-100 text-center mb-4">Coffee Bean Preferences</h3>
             <ResponsiveContainer width="100%" height={250}>
               <PieChart>
@@ -113,7 +113,7 @@ export default function Analysis() {
           </motion.div>
 
           {/* Grafik Line Chart */}
-          <motion.div className="bg-gray-700 p-6 rounded-xl shadow-md">
+          <motion.div className="bg-gray-700 p-4 rounded-xl shadow-md">
             <h3 className="text-xl font-semibold text-gray-100 text-center mb-4">Monthly Revenue</h3>
             <ResponsiveContainer width="100%" height={250}>
               <LineChart data={revenueData}>

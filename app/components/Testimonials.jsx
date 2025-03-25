@@ -71,7 +71,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials-section"
-      className="relative w-full py-12 px-6 md:px-16 bg-gradient-to-b from-gray-900 to-gray-800 text-white overflow-hidden"
+      className="relative w-full py-24 px-6 md:px-16 bg-gradient-to-b from-gray-900 to-gray-800 text-white overflow-hidden"
     >
       {/* Efek Background Dinamis */}
       <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gray-700 opacity-10 blur-3xl rounded-full animate-pulse-slow"></div>

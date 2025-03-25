@@ -22,7 +22,7 @@ export default function Cover() {
   if (!isClient) return null; // Hindari render sebelum client siap
 
   return (
-    <section className="relative w-full max-w-screen h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative w-full max-w-screen h-screen flex items-center justify-center overflow-hidden">
 
       {/* Skeleton Loader */}
       {!isVideoLoaded && (
@@ -93,7 +93,7 @@ export default function Cover() {
             color: "#000",
           }}
           href="#about-section"
-          className="mt-8 inline-block bg-yellow-400 text-black font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300"
+          className="mt-8 inline-block bg-orange-200 text-black font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300"
         >
           Lihat Menu Kami
         </motion.a>
@@ -106,7 +106,7 @@ export default function Cover() {
           transition={{ repeat: Infinity, duration: 2 }}
         >
           <ChevronDownIcon
-            className="h-8 w-8 text-yellow-400 cursor-pointer animate-bounce"
+            className="h-8 w-8 text-orange-200 cursor-pointer animate-bounce"
             onClick={scrollToAbout} // Tambahkan fungsi scroll smooth
           />
         </motion.div>

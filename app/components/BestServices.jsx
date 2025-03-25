@@ -44,7 +44,7 @@ export default function BestService() {
   return (
     <section
       id="best-service-section"
-      className="relative w-full pb-4 pt-10 px-3 md:px-8 lg:px-10 bg-gradient-to-b from-[#1E293B] to-[#0F172A] text-white overflow-hidden"
+      className="relative w-full pb-4 pt-14 px-3 md:px-8 lg:px-10 bg-gradient-to-b from-[#1E293B] to-[#0F172A] text-white overflow-hidden"
     >
       {/* Efek Background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#C5A880] opacity-10 blur-3xl rounded-full"></div>
@@ -55,7 +55,7 @@ export default function BestService() {
           initial={{ opacity: 0, y: -30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-          className="text-2xl md:text-4xl lg:text-5xl font-extrabold font-serif tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500"
+          className="text-2xl md:text-4xl lg:text-5xl font-extrabold font-serif tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-400"
         >
           Our Premium Services
         </motion.h2>

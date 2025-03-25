@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { HomeIcon, UserIcon, CogIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { HomeIcon, UserIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { FaCoffee } from "react-icons/fa";
 
 export default function Navbar() {
   const [isNavbarFixed, setIsNavbarFixed] = useState(false);
@@ -35,13 +36,35 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Efek scroll halus saat ikon navbar diklik
+  useEffect(() => {
+    const links = document.querySelectorAll("a[href^='#']");
+    links.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+
+    return () => {
+      links.forEach(link => link.removeEventListener("click", () => {}));
+    };
+  }, []);
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -30, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, ease: "anticipate" }}
-      className={`fixed bg-black/40 top-3 md:top-4 lg:top-5 left-1/2 -translate-x-1/2 p-3 rounded-full flex space-x-4 md:space-x-5 lg:space-x-6 z-50 transition-all duration-300${
-        isNavbarFixed ? "bg-black backdrop-blur-sm" : "bg-black backdrop-blur-sm"
+      className={`fixed top-3 md:top-4 lg:top-5 left-1/2 -translate-x-1/2 p-3 rounded-full flex space-x-4 md:space-x-5 lg:space-x-6 z-50 transition-all duration-300 ${
+        isNavbarFixed ? "bg-black/30 backdrop-blur-sm shadow-lg" : "bg-black/40"
       }`}
     >
       {navItems.map((item, index) => (
@@ -53,10 +76,10 @@ export default function Navbar() {
 
 // Data menu navbar
 const navItems = [
-  { id: "home", label: "Home", icon: <HomeIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
-  { id: "about", label: "About", icon: <UserIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
-  { id: "services", label: "Services", icon: <CogIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
-  { id: "contact", label: "Contact", icon: <PhoneIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
+  { id: "home", label: "Beranda", icon: <HomeIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
+  { id: "about-section", label: "Tentang", icon: <UserIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
+  { id: "coffee-menu", label: "Menu", icon: <FaCoffee className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
+  { id: "founder-section", label: "Kontak", icon: <PhoneIcon className="h-5 w-5 md:h-6 md:w-6 lg:h-7 lg:w-7" /> },
 ];
 
 // Komponen NavItem dengan efek masuk yang lebih smooth
