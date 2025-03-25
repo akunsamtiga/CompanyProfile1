@@ -119,6 +119,7 @@ export default function Founder() {
               alt="Founder"
               width={200}
               height={200}
+              unoptimized={true}
               className="rounded-xl w-64 h-32 md:w-56 md:h-full lg:w-54 lg:h-full object-cover relative z-10"
             />
 
